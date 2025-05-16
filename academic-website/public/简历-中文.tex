@@ -1,0 +1,101 @@
+% !TeX TS-program = xelatex
+
+\documentclass{resume}
+\ResumeName{郑铮}
+
+% 如果想插入照片，请使用以下两个库。
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeSubheading}[3]{ % 注意：参数从4改为3，因为未使用#4
+  \noindent % 防止缩进
+  \begin{tabular*}{\linewidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} | #2 & \textit{#3} \\
+  \end{tabular*}
+  \par\vspace{0.5em} % 可选：控制段落间距
+}
+
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\begin{document}
+
+\ResumeContacts{
+  (+86)185-1832-3739,%
+  \ResumeUrl{mailto:Zheng_57320218231@outlook.com}{Zheng\_5732021823@outlook.com},%
+  \ResumeUrl{https://github.com/zz9tf}{github}%
+}
+
+% 如果想插入照片，请取消此代码的注释。
+% 但是默认不推荐插入照片，因为这不是简历的重点。
+% 如果默认的照片插入格式不能满足你的需求，你可以尝试调整照片的大小，或者使用其他的插入照片的方法。
+% 不然，也可以先渲染 PDF 简历，然后用其他工具在 PDF 上叠加照片。
+% \begin{tikzpicture}[remember picture, overlay]
+%   \node [anchor=north east, inner sep=1cm, xshift=-0.5cm]  at (current page.north east) 
+%      {\includegraphics[width=2cm]{image.png}};
+% \end{tikzpicture}
+
+\ResumeTitle
+
+\section{教育经历}
+\resumeSubheading{布兰戴斯大学}{计算机硕士 （深度学习，大语言模型方向）}{Sep. 2021 – Jan. 2024}
+\resumeSubheading{密苏里科技大学}{地质与地球物理本科}{Sep. 2019 – May 2021}
+\resumeSubheading{中国地质大学（北京）}{资源勘查工程（能源）}{Sep. 2016 – May 2019}
+
+\section{工作经历}
+
+\ResumeItem{布兰戴斯大学}
+[访问研究科学家（Visiting Research Scientist） \ResumeUrl{https://arxiv.org/abs/2501.16952}{\color{blue}{Arvix}}]
+[2024.5—2025.2] 
+
+\begin{itemize}
+\item{提出了一个新型的多尺度的\textbf{检索增强生成（RAG）}算法，在一定程度上解决了\textbf{中间信息丢失（lost in the middle}和\textbf{参考文本语义不全}的问题。在Ragas框架下，使用gpt-4o-mini模型进行评估。与RAG中传统的\textbf{句子分割器}相比，该方法正确率提升了\textbf{25.7\%}。}
+\item{Justin：提出了一个新型的\textbf{多尺度检索增强生成（RAG）}算法，检索知识更全更准，在一定程度上解决了\textbf{中间信息丢失（lost in the middle）}和\textbf{参考文本语义不全}的问题。在Ragas框架下，使用gpt-4o-mini模型评估算法效果，与RAG中传统的\textbf{文本切片方法}相比，该算法的正确率提升了\textbf{25.7\%}。}
+% \item{项目涵盖数据收集与处理、语言模型的微调、设计Prompt让LLM进行关键信息提取与问题回答、模型量化（q4）、基于gpt-4o-mini合成评估数据集、基于AI Ragas的问题系统性能评估。}
+\item{使用网络爬虫技术（\textbf{Requests, BeautifulSoup4, Selenium-wire}）收集并整理了超过8,000论文的数据集，并利用\textbf{GROBID}将原始文档解析为整文、大段、段落、多句的文本块，并根据它们在文章中的从属关系整合为多尺度树状结构从，以便查询不同文本块间的关系。
+\item 使用主流框架（\textbf{Llama-index}, \textbf{langchain}, \textbf{Transformers}）和\textbf{SQL} + \textbf{chromaDB}数据库来构建兼容多种RAG方法的模块化问答系统，以测试多尺度文本块在问答系统中的效果。}
+\item{采用\textbf{Linq-Embed-Mistral}进一步对长文本进行基于语义相似度的分割，并利用\textbf{Vicuna-13B}模型，按\textbf{MapReduce}方法提炼整文和大段级文字块的核心内容，减少了\textbf{"lost in the middle"}的现象和参考文本tokens的使用。}
+\item{在随机选择的50个论文所包含的文本块中，按预设规则选择文本块，并\textbf{合成了800条问答数据}作为评估数据集。}
+\item{量化抓去的文本与问题相关的可能性，预设可能性积累的最大值，去除提取文本中的噪点，提升了\textbf{2\%}的正确率。}
+\item{主动自主研发bash、python脚本，结合\textbf{slurm}自动化资源使用查询、切换环境，和多线程任务实验，提高了实验效率}
+\end{itemize}
+
+\section{项目经历}
+\ResumeItem{多模态问答模型复现}
+[\emph{VLM, Transformer, CNN, 解码器}]
+[2024.11]
+\begin{itemize}
+  \item 复现了\textbf{多模态视觉语言模型PaliGemma}，探索其架构，理解了视觉和文本组件在视觉语言任务中的整合机制。
+  \item 在问答基准数据集\textbf{VQAv2}和\textbf{ScienceQA}上对模型进行微调，在多项基准测试中达到了先进水平。
+  \item 为PaliGemma实现并测试了多模态微调流程，在不同分辨率的图像（224px、448px和896px）上微调，优化了图像在不同分辨率上的表现。
+\end{itemize}
+\ResumeItem{\textbf{Hire Me Now}}
+[\emph{Docker, AWS, MERN, Django, Nginx, RESTful, LLM）}]
+[2023.3]
+\begin{itemize}
+  \item 完全设计并开发了一个整合了 \textbf{LLM} 的\textbf{全栈}网站。网站旨在帮助员工在求职竞争中脱颖而出的全站网站，使用了 \textbf{Django} 框架和 \textbf{MERN} 技术栈（MongoDB、Express.js、React、Node.js）。
+  \item 构建了基于 \textbf{Express} 和 \textbf{Django} 的微服务，采用无服务器 \textbf{REST API} 架构分别相应前端的LLM的调用需求与用户登录登出的信息交互。
+  \item 设计了基于 \textbf{React} 的前端，集成 \textbf{Redux}、\textbf{Google 认证} 和 \textbf{Stripe API}来管理全局登录登出状态、验证与接受google账户信息以及接入收款功能。
+  \item 配置了 \textbf{Nginx} 和 \textbf{Certbot}，并启用 \textbf{SSL 证书}，以确保网站能够能安全的运行。
+  \item 使用 \textbf{Docker} 容器化整个系统，并自主研发 \textbf{Shell 脚本} 来自动化安装和部署流程。
+  \item 将整个系统部署在 \textbf{AWS EC2} 服务上，并通过 \textbf{GoDaddy} 和 \textbf{Route 53} 绑定域名。
+\end{itemize}
+\section{论文}
+\begingroup
+\renewcommand{\section}[2]{}%
+\begin{thebibliography}{9}
+\bibitem{zheng2025}
+\textbf{Zheng Zheng}, Xinyi Ni, and Pengyu Hong. Multiple Abstraction Level Retrieve Augment Generation. In \textit{arXiv preprint arXiv:2501.16952}, 2025. \href{https://arxiv.org/abs/2501.16952}{\color{blue}arXiv:2501.16952}.
+\bibitem{Zhang2023}
+Pengtao Zhang, \textbf{Zheng Zheng}, and Junlin Zhang. FiBiNet++: Reducing model size by low rank feature interaction layer for CTR prediction. In \textit{Proceedings of the 32nd ACM International Conference on Information and Knowledge Management}, \href{https://dl.acm.org/doi/10.1145/3583780.3615242}{\color{blue}CIKM' 23}, pages 4425–4429, New York, NY, USA, 2023. Association for Computing Machinery.
+\end{thebibliography}
+\endgroup
+
+\end{document}

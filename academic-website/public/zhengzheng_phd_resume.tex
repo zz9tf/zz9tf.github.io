@@ -1,0 +1,311 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+\usepackage{fancyhdr}
+\usepackage{latexsym}
+\usepackage{cite}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+\usepackage{amsmath}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyhead[L]{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+% new command for publication
+\newcommand{\publicationentry}[3]{%
+    \noindent
+    {#1,} #2. \emph{#3}\vspace{-5pt}
+}
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+% \newcommand{\resumeSubheadingSchool}[5]{
+%   \vspace{-2pt}\item
+%     \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+%       \textbf{#1} & \textbf{\small #2} \\
+%       \text{\small#3} & \text{\small #4} \\
+%       \multicolumn{2}{l}{\textit{\small#5} }
+%     \end{tabular*}\vspace{-7pt}
+% }
+
+\newcommand{\resumeSubheadingSchool}[5]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \text{\small#3} & \text{\small #4} \\
+      \multicolumn{2}{p{\textwidth}}{\hangindent=15pt\hangafter=0\textit{\small#5}}
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    {\Huge \scshape Zheng Zheng} \\ \vspace{1pt}
+    829 South Ave., Plainfield, NJ, 07062 \\ \vspace{1pt}
+    \small \raisebox{-0.1\height}\faPhone\ 573-202-1823 ~ \href{mailto:zhengzheng@brandeis.edu}{\raisebox{-0.2\height}\faEnvelope\  \underline{zhengzheng@brandeis.edu}} ~ 
+    \href{https://www.linkedin.com/in/zheng-zheng-082420217/}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/zheng-zheng-082420217}}  ~
+    \href{https://zz9tf.github.io/zheng_website/}{\raisebox{-0.2\height}\faGithub\ \underline{github portfolio}}
+    \vspace{-7pt}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    % \resumeSubheadingSchool
+    %   {Brandeis University}{Sep. 2021 -- Dec. 2023}
+    %   {Master of Science in Computer Science}{GPA: 3.78/4.0}
+    %   {Relevant Courses: Deep Learning (A), Fundamentals of Natural Language Processing (A), Data Structures and the Fundamentals of Computing (A), Advanced Programming Techniques in Java (A-), Discrete Structures (A), Theory of Computation (A), 3-D Animation(A), Operating Systems (B)}
+    
+    \resumeSubheading
+      {Brandeis University}{Sep. 2021 -- Dec. 2023}
+      {Master of Science in Computer Science}{GPA: 3.8/4.0}
+      \resumeItemListStart
+          \resumeItem{Relevant Courses: Deep Learning (A), Fundamentals of Natural Language Processing (A), Data Structures and the Fundamentals of Computing (A), Advanced Programming Techniques in Java (A-), Discrete Structures (A), Theory of Computation (A), 3-D Animation(A), Operating Systems (B)}
+      \resumeItemListEnd
+      
+    \vspace{2pt}
+    
+    \resumeSubheading
+      {Missouri University of Science and Technology }{Sep. 2019 -- May 2021}
+      {Bachelor of Science in Geology and Geophysics }{GPA: 4.0/4.0}
+      \resumeItemListStart
+          \resumeItem{Relevant Courses: Computational Geophysics (A), Discrete Math (A), Global Tectonics (A)}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+  \vspace{-7pt}
+
+%-----------Publication-----------
+\section{Publication}
+    \begingroup
+    \renewcommand{\section}[2]{}%
+
+    \begin{thebibliography}{9}
+
+    \bibitem{Zhang2023}
+    Pengtao Zhang, \textbf{Zheng Zheng}, and Junlin Zhang. FiBiNet++: Reducing model size by low rank feature interaction layer for CTR prediction. In \textit{Proceedings of the 32nd ACM International Conference on Information and Knowledge Management}, \href{https://dl.acm.org/doi/10.1145/3583780.3615242}{\color{blue}CIKM' 23}, pages 4425–4429, New York, NY, USA, 2023. Association for Computing Machinery.
+    
+    \end{thebibliography}
+    \endgroup
+        
+\vspace{-7pt}
+
+%-----------EXPERIENCE-----------
+% \section{Research Experience}
+\section{Research Experience}
+    
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {MAL RAG - Chunking Optimization $|$ \href{https://arxiv.org/pdf/2501.16952}{\color{blue}{arXiv}}}{Apr. 2024 - Current}
+      {Visiting Research Scientist with Prof. Pengyu Hong}{Waltham, MA}
+      \resumeItemListStart
+        \resumeItem{Designed and implemented an end-to-end \textbf{Retrieval-Augmented Generation (RAG)} system pipeline, encompassing data gathering, preprocessing, extraction, model deployment, and performance evaluation for optimization.}
+        \resumeItem{Collected and curated a dataset of over 8,000 documents using advanced web scraping techniques (\textbf{Requests, BeautifulSoup4, Selenium-wire}) and leveraged \textbf{Grobid} for parsing raw documents into structured, hierarchical nodes across four abstract levels using \textbf{Llama-index}.}
+        \resumeItem{Employed a \textbf{semantic} approach with \textbf{Linq-Embed-Mistral} to split long texts and utilized \textbf{MapReduce} with the \textbf{Vicuna-13B} model to distill them into concise key information, enhancing text processing efficiency.}
+        \resumeItem{Created specialized QAR (question-answer-reason) datasets with \textbf{GPT-4-mini} based on specific node contexts selected by the \textbf{Bert classification model} and artificial rules.}
+        \resumeItem{Utilized \textbf{Linq-Embed-Mistral} to create embeddings and performed dimensionality reduction and clustering analysis.}
+        \resumeItem{Designed a robust evaluation framework for the RAG system using Ragas metrics.}
+        \resumeItem{Compared to the traditional RAG method, MAL RAG improves Ragas-based evaluation score answer correctness by \textbf{25.73\%}}
+        
+      \resumeItemListEnd
+      \vspace{-8pt}
+    \resumeSubHeadingListEnd
+    
+    \resumeSubHeadingListStart
+    \resumeSubheading
+      {FiBiNet++ - Recommended System $|$ \href{https://arxiv.org/pdf/2209.05016}{\color{blue}{arXiv}}}{2022 - 2023}
+      {Research Fellow}{Remote}
+      \resumeItemListStart
+        \resumeItem{ Conducted research focused on optimizing the model structure of both \textbf{bi-linear} and \textbf{SENet} structures within Recommandation System model \textbf{FibiNet} based on \textbf{Tensorflow} framework}
+        \resumeItem{Preprocessed, analyzed, and visualized datasets using \textbf{Pandas} and \textbf{NumPy}, conducting assessments of basic statistical properties, distribution patterns, and correlations.}
+        \resumeItem{ Designed and implemented an innovative "Low Rank Layer" and also transformed the \textbf{element-wise Hadamard product} into an \textbf{inner product} method within the bi-linear interaction, leading to a significant reduction in the size of the FiBiNet model}
+        \resumeItem{ Enhanced the efficiency of the "squeeze" step in the SENet structure by strategically splitting data points into multiple groups, improving the model's ability to capture one-dimensional features }
+        \resumeItem{ Conducted rigorous benchmarking and performance evaluations of various models including \textbf{DNN}, \textbf{DeepFM}, \textbf{xDeepFM}, \textbf{DCN}, \textbf{AutoInt}, \textbf{DCN v2}, \textbf{FiBiNet}, and the newly developed \textbf{FiBiNet++}, achieving significant improvements in training and inference efficiencies, ranging from \textbf{37.50\% to 81.03\%} across the datasets}
+        \resumeItem{Achieved a substantial reduction in model size for \textbf{FiBiNet}, decreasing it by \textbf{12x to 16x} across datasets, while also delivering remarkable performance improvements over state-of-the-art models}
+    \resumeItemListEnd
+      \resumeSubHeadingListEnd
+      \vspace{-5pt}
+\vspace{-7pt}
+
+%-----------EXPERIENCE-----------
+% \section{Research Experience}
+\section{Teaching Experience}
+    
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Brandeis Computer Science Department}{Sep. 2022 - May. 2023}
+      {Teaching Assistant with Prof. Timothy J. Hickey}{Waltham, MA}
+      \resumeItemListStart
+        \resumeItem{ COSI-10A : Introduction to Problem Solving in Python - Fall 2022 \& Summer 2023}
+        \resumeItem{ COSI-153A : Mobile Application Development - Summer 2023} 
+        \resumeItem{ COSI-29A : Discrete Structures - Fall 2023 } 
+      \resumeItemListEnd
+      \vspace{-5pt}
+      
+    \resumeSubHeadingListEnd
+\vspace{-7pt}
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+        \resumeProjectHeading
+          {\textbf{Hire Me Now \href{https://hiremenow-ai.com}{\color{blue}{alive!}}} $|$ \emph{Docker, AWS, MERN stack, Django, Nginx, Certbot, Stripe, RESTful, LLM model}}{Mar. 2023}
+          \resumeItemListStart
+            \resumeItem{Designed and developed a full-stack website powered by \textbf{LLM} models aimed at assisting employees in their  job search competition, utilizing \textbf{Django} framework, and \textbf{MERN} stack (MongoDB, Express.js, React, Node.js)}
+            \resumeItem{Built \textbf{Express} and \textbf{Django} microservices with serverless \textbf{REST API}. The Django implemented with \textbf{PEP8} code style}
+            \resumeItem{Architected a React frontend with \textbf{Redux}, \textbf{Google Authentication} and \textbf{Stripe} API to forbid 100\% unauthorized access and enhance data status management}
+            \resumeItem{Configured \textbf{Nginx} and \textbf{Certbot} with \textbf{SSL-certification} to facilitate communications between different services}
+            \resumeItem{Containerized the entire system using \textbf{Docker} and developed \textbf{shell scripts} to automate installation and deployment}
+            \resumeItem{Deployed the whole system on the \textbf{AWS EC2} service and incorporated a domain name using \textbf{GoDaddy} and \textbf{Route 53}}
+          \resumeItemListEnd
+        \vspace{-5pt}
+      \resumeProjectHeading
+          {\textbf{Multimodal QA system} $|$ \emph{LLM, Transformer, CNN, Decoder}}{Nov. 2024}
+          \resumeItemListStart
+            \resumeItem{Reproduced and analyzed the \textbf{multimodal vision-language model}, exploring its architecture and understanding the integration of visual and textual components for vision-language tasks.}
+            \resumeItem{Fine-tuned the model on question answering benchmark \textbf{VQAv2} and \textbf{ScienceQA}, achieving state-of-the-art results across various benchmarks.}
+            \resumeItem{Implemented and tested the multimodal pre-training process for PaliGemma, experimenting with different image resolutions (224px, 448px, and 896px) to optimize performance for high-resolution image tasks.}
+            
+          \resumeItemListEnd
+        \vspace{-5pt}
+         
+    \resumeSubHeadingListEnd
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Predicting Effective Arguments \href{https://github.com/zz9tf/DL-Predicting-Effective-Arguments}{\color{blue}{github}}} $|$ \emph{RNN, GRU, LSTM, Bert, Pytorch, Matplotlib}}{Mar. 2023}
+          \resumeItemListStart
+            \resumeItem{Preprocess datasets into Torchtext data iterators, including steps such as \textbf{lowercasing}, \textbf{removing stopwords}, performing \textbf{stemming} and \textbf{lemmatization}, and handling \textbf{out-of-vocabulary (OOV)} words.}
+            \resumeItem{Designed and trained various neural network models, including \textbf{RNN}, \textbf{LSTM}, \textbf{GRU}, and \textbf{BERT}, to classify argumentative elements within essays written by U.S. students.}
+            \resumeItem{Conducted an ablation study combined with a grid search to systematically evaluate model performance, achieving the lowest loss and highest accuracy across different architectures.}
+            
+          \resumeItemListEnd
+        \vspace{-5pt}
+         
+    \resumeSubHeadingListEnd
+\vspace{-7pt}
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, Java, HTML/CSS, JavaScript, TypeScript, R, C, SQL, Shell Script, Latex, Go } \\
+    
+     \textbf{Dev Tools}{: Docker, AWS, Git, MongoDB, Nginx, Redis,  MySQL, Cloudflare, nodemon, firebase, Google OAuth, Stripe} \\
+    }}
+    
+    \textbf{Frameworks}{: SpringBoot, SpringCloud, React, Django, Node.js, GraphQL, Pytorch, Tensorflow, Pandas, Numpy, babel.js, bootstrap, Redux} \\
+ \end{itemize}
+
+\end{document}

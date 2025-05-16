@@ -1,0 +1,367 @@
+import React, { useState } from "react";
+import Layout from "../components/Layout";
+import { personalInfo } from "../data/siteConfig";
+
+const ContactPage = () => {
+  // 状态管理
+  const [formState, setFormState] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState("");
+
+  // 表单处理
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, value } = e.target;
+    setFormState((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setError("");
+
+    try {
+      // 模拟表单提交
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+      console.log("Form submitted:", formState);
+      setIsSubmitted(true);
+      setFormState({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (err) {
+      setError(
+        "There was an error submitting your message. Please try again later."
+      );
+      console.error("Error submitting form:", err);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <Layout title={`Contact | ${personalInfo.name}`}>
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-3xl font-bold text-gray-800 mb-6">Contact</h1>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {/* 联系信息 */}
+          <div>
+            <div className="bg-white rounded-lg shadow-md overflow-hidden p-6 mb-6">
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">
+                Contact Information
+              </h2>
+
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <svg
+                    className="w-6 h-6 text-blue-600 mt-1 mr-3"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    ></path>
+                  </svg>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-800">
+                      Email
+                    </h3>
+                    <a
+                      href={`mailto:${personalInfo.email}`}
+                      className="text-blue-600 hover:text-blue-800"
+                    >
+                      {personalInfo.email}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <svg
+                    className="w-6 h-6 text-blue-600 mt-1 mr-3"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                    ></path>
+                  </svg>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-800">
+                      Phone
+                    </h3>
+                    <p className="text-gray-600">{personalInfo.phone}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <svg
+                    className="w-6 h-6 text-blue-600 mt-1 mr-3"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    ></path>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    ></path>
+                  </svg>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-800">
+                      Address
+                    </h3>
+                    <p className="text-gray-600">
+                      {personalInfo.address.line1}
+                      <br />
+                      {personalInfo.address.line2}
+                      <br />
+                      {personalInfo.department}
+                      <br />
+                      {personalInfo.institution}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <svg
+                    className="w-6 h-6 text-blue-600 mt-1 mr-3"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    ></path>
+                  </svg>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-800">
+                      Office Hours
+                    </h3>
+                    <p className="text-gray-600">By appointment</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-md overflow-hidden p-6">
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">
+                Connect with Me
+              </h2>
+              <div className="flex space-x-4">
+                <a
+                  href={personalInfo.socialLinks.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-blue-600 transition-colors"
+                >
+                  <svg
+                    className="w-8 h-8"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href={personalInfo.socialLinks.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-blue-600 transition-colors"
+                >
+                  <svg
+                    className="w-8 h-8"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                  </svg>
+                </a>
+                <a
+                  href={personalInfo.socialLinks.googleScholar}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-blue-600 transition-colors"
+                >
+                  <svg
+                    className="w-8 h-8"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M12 24a7 7 0 0 1-5.467-2.607 7.242 7.242 0 0 1-1.895-4.511c-.001-.844.21-1.666.618-2.385a7 7 0 0 1 5.428-3.554 6.866 6.866 0 0 1 1.932-.034 6.112 6.112 0 0 1 1.212.238l-.357.714c-.378-.124-.775-.204-1.177-.239a5.771 5.771 0 0 0-1.731.04 6 6 0 0 0-4.653 3.072 5.804 5.804 0 0 0-.532 2.044 6.257 6.257 0 0 0 1.636 3.899A6 6 0 0 0 12 23.001c1.591-.001 3.116-.642 4.243-1.773A6.025 6.025 0 0 0 18 17a5.886 5.886 0 0 0-2.585-4.888l.583-.566C17.92 12.962 19 15.010 19 17c0 1.858-.79 3.638-2.172 4.895-.195.164-.398.318-.609.46a7 7 0 0 1-4.219 1.644z"></path>
+                    <path d="M10 15.722h8v3H10z"></path>
+                    <path d="M21.75 4.27L11.746 0c-.4.703-2.2 3.85-4.05 7.11 0 0 2.309 1.669 4.704 1.669 1.525 0 2.836-.478 3.899-1.158l.004-.003 5.447-3.347z"></path>
+                    <path d="M7.693 7.11c-2.42 4.23-4.496 7.867-4.496 7.867 2.6.155 5.565-1.524 6.855-3.57h3.948v5H5v3h10v-8h-7.307z"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* 联系表单 */}
+          <div className="bg-white rounded-lg shadow-md overflow-hidden p-6">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">
+              Send Me a Message
+            </h2>
+
+            {isSubmitted ? (
+              <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded mb-4">
+                <p>
+                  Thank you for your message! I will get back to you as soon as
+                  possible.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit}>
+                {error && (
+                  <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded mb-4">
+                    <p>{error}</p>
+                  </div>
+                )}
+
+                <div className="mb-4">
+                  <label
+                    htmlFor="name"
+                    className="block text-gray-700 font-medium mb-2"
+                  >
+                    Your Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formState.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
+                  />
+                </div>
+
+                <div className="mb-4">
+                  <label
+                    htmlFor="email"
+                    className="block text-gray-700 font-medium mb-2"
+                  >
+                    Your Email *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formState.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
+                  />
+                </div>
+
+                <div className="mb-4">
+                  <label
+                    htmlFor="subject"
+                    className="block text-gray-700 font-medium mb-2"
+                  >
+                    Subject *
+                  </label>
+                  <select
+                    id="subject"
+                    name="subject"
+                    value={formState.subject}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
+                  >
+                    <option value="">Please select a subject</option>
+                    <option value="Research Collaboration">
+                      Research Collaboration
+                    </option>
+                    <option value="Academic Inquiry">Academic Inquiry</option>
+                    <option value="Speaking Invitation">
+                      Speaking Invitation
+                    </option>
+                    <option value="Student Advising">Student Advising</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                <div className="mb-4">
+                  <label
+                    htmlFor="message"
+                    className="block text-gray-700 font-medium mb-2"
+                  >
+                    Message *
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formState.message}
+                    onChange={handleChange}
+                    rows={5}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
+                  ></textarea>
+                </div>
+
+                <div>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className={`w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition duration-300 ease-in-out ${
+                      isSubmitting ? "opacity-75 cursor-not-allowed" : ""
+                    }`}
+                  >
+                    {isSubmitting ? "Sending..." : "Send Message"}
+                  </button>
+                </div>
+              </form>
+            )}
+          </div>
+        </div>
+      </div>
+    </Layout>
+  );
+};
+
+export default ContactPage;
