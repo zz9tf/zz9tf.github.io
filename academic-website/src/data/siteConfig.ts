@@ -299,10 +299,12 @@ export const aiProjectAreas: AIProjectArea[] = [
 export const aiEngineeringSkills = [
   "PyTorch, TensorFlow, HuggingFace Transformers",
   "Fine-tuning (LoRA/PEFT) & multimodal systems",
-  "RAG systems, embedding models, evaluation frameworks",
+  "RAG systems, embedding models",
   "Distributed training (DDP), mixed precision (AMP)",
-  "Large-scale data preprocessing & feature engineering",
+  "Large-scale data preprocessing",
   "Docker, AWS, GPU training, experiment tracking",
+  "feature engineering",
+  "evaluation frameworks",
 ];
 
 /** Short tagline for Projects page. */

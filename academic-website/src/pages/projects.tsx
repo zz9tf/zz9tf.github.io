@@ -49,10 +49,10 @@ const ProjectsPage = () => {
           <h2 className="text-lg font-medium text-gray-900 mb-5 pl-4 border-l-2 border-gray-300">
             AI Engineering Skills
           </h2>
-          <ul className="flex flex-wrap gap-x-6 gap-y-2 text-gray-600 text-[15px]">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-8 text-gray-600 text-[15px]">
             {aiEngineeringSkills.map((skill, i) => (
-              <li key={i} className="flex items-center gap-2">
-                <span className="text-blue-400">·</span>
+              <li key={i} className="flex items-start gap-2">
+                <span className="text-blue-400 shrink-0 mt-0.5">·</span>
                 <span>{skill}</span>
               </li>
             ))}
