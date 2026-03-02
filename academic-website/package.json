@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "dev:watch": "nodemon --watch next.config.ts --watch .env --watch .env.local --watch .env.* --ext ts,js,env --exec \"npm run dev\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -15,6 +16,7 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "nodemon": "^3",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",

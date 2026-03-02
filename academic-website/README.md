@@ -1,40 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Academic Website
 
-## Getting Started
+A personal academic site built with [Next.js](https://nextjs.org) (Pages Router), TypeScript, and Tailwind CSS.
 
-First, run the development server:
+## Prerequisites
+
+- Node.js 18+
+- npm / yarn / pnpm
+
+## Quick Start
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Run development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser. Pages hot-reload as you edit.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Run with nodemon (auto-restart on config/env changes)
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+If you change `next.config.ts` or `.env` files, the dev server does not restart automatically. Use:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+```bash
+npm run dev:watch
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Nodemon watches `next.config.ts`, `.env`, `.env.local`, and `.env.*`; when they change, it restarts `npm run dev`. Page code is still hot-reloaded by Next.js.
 
-## Learn More
+## Scripts
 
-To learn more about Next.js, take a look at the following resources:
+| Command           | Description                                                |
+|-------------------|------------------------------------------------------------|
+| `npm run dev`     | Start dev server with Turbopack (hot reload)               |
+| `npm run dev:watch` | Same as `dev`, with nodemon restart on config/env changes |
+| `npm run build`   | Build for production                                       |
+| `npm run start`   | Run production server (run `build` first)                  |
+| `npm run lint`    | Run ESLint                                                 |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+## Project structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+academic-website/
+├── public/           # Static assets (images, PDFs, etc.)
+├── src/
+│   ├── components/   # Reusable UI (e.g. Layout)
+│   ├── data/        # Site config (siteConfig.ts)
+│   ├── pages/       # Routes and API routes
+│   └── styles/      # Global CSS
+├── next.config.ts
+├── package.json
+└── README.md
+```
 
-## Deploy on Vercel
+Main pages: Home (`/`), Research (`/research`), Publications (`/publications`), Contact (`/contact`). CV links directly to PDF. Edit `src/data/siteConfig.ts` to change site content and metadata.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+- **Vercel**: Connect the repo to [Vercel](https://vercel.com); default settings work.
+- **Static export**: If you need a static site, configure `output: 'export'` in `next.config.ts` and run `npm run build`; output will be in `out/`.
+
+## Learn more
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS](https://tailwindcss.com/docs)

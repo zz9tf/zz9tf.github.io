@@ -56,6 +56,8 @@ desktop.ini
 *.xlsx
 *.docx
 *.pdf
+# Exception: allow CV/resume PDFs in public so the site can serve them
+!academic-website/public/*.pdf
 *.zip
 /large-assets
 

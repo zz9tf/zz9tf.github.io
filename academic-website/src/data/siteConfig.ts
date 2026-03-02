@@ -3,96 +3,97 @@
 // Personal Information
 export const personalInfo = {
   name: "Zheng Zheng",
-  title: "Visiting Research Scientist",
+  title: "PhD Student",
   department: "Department of Computer Science",
-  institution: "Brandeis University",
-  email: "zhengzheng@brandeis.edu",
-  phone: "573-202-1823",
+  institution: "University of Texas at Arlington",
+  email: "zxz7934@mavs.uta.edu",
   address: {
-    line1: "829 South Ave.",
-    line2: "Plainfield, NJ, 07062",
+    line: "Arlington, TX USA",
   },
-  profileImage: "/profile-placeholder.jpg",
+  profileImage: "/profile.jpg",
   socialLinks: {
     linkedin: "https://www.linkedin.com/in/zheng-zheng-082420217/",
     github: "https://github.com/zz9tf",
     googleScholar:
-      "https://scholar.google.com/citations?user=7qqGJ1AAAAAJ&hl=en&oi=sra",
+      "https://scholar.google.com/citations?user=MeADnoMAAAAJ&hl=en",
   },
+  homeBlurb:
+    '\"Understanding how structured information and optimization dynamics shape learning systems.\"',
 };
 
-// CV/Resume Files
+// CV/Resume Files (PDFs must live in public/; compile zhengzheng_phd_resume.tex → zhengzheng_phd_resume.pdf)
 export const resumeFiles = {
-  englishCV: "/Zheng_Zheng_phd_CV.pdf",
+  englishCV: "/zhengzheng_phd_resume.pdf",
   chineseResume: "/简历_郑铮.pdf",
 };
 
 // About Me Section
 export const aboutMe = {
   paragraphs: [
-    "Welcome to my academic website! I am a Visiting Research Scientist in the Department of Computer Science at Brandeis University. My research focuses on large language models, deep learning, and retrieval-augmented generation systems.",
-    "I received my M.S. in Computer Science from Brandeis University in 2023, where I worked on developing novel algorithms for deep learning and natural language processing. I also hold a B.S. in Geology and Geophysics from Missouri University of Science and Technology.",
-    "My current research projects include designing multiple abstraction level systems for retrieval-augmented generation and optimizing recommendation systems with innovative techniques like the Low Rank Layer method.",
+    "Welcome to my academic website. I am a Ph.D. student in Computer Science at the University of Texas at Arlington, advised by Prof. Junzhou Huang. My research lies at the intersection of biomedical machine learning, multi-modal representation learning, and optimization dynamics. I am particularly interested in how information is injected, aligned, and optimized across heterogeneous modalities in complex learning systems.",
+    "My recent work focuses on heterogeneous aligned fusion for survival prediction under missing modalities (MIDL), multi-modal computational pathology, and gradient conflict in multi-objective learning. I investigate how shared and task-specific parameter subspaces evolve during training, and how optimization dynamics affect representation stability in biomedical models.",
+    "More broadly, I am interested in understanding how large models—such as protein foundation models and large language models—encode and transfer structured information. I aim to explore principled methods for information injection and unsupervised representation learning in foundation-scale systems.",
+    "Previously, I worked on efficient deep learning architectures and recommendation systems, including a low-rank feature interaction method presented at ICML 2023. However, my current focus is on developing a deeper theoretical and empirical understanding of learning dynamics in multi-modal and multi-objective settings.",
   ],
 };
 
 // Research Interests
 export const researchInterests = [
-  "Large Language Models",
-  "Retrieval-Augmented Generation (RAG)",
-  "Deep Learning",
-  "Recommender Systems",
-  "Natural Language Processing",
-  "Multimodal Machine Learning",
-  "Full-Stack Application Development",
+  "Multimodal Learning under Missing Modalities",
+  "Computational Pathology & Biomedical AI",
+  "Heterogeneous Aligned Fusion",
+  "Multi-Objective Optimization & Gradient Conflict",
+  "Information Injection in Foundation Models",
+  "Representation Learning & Subspace Dynamics",
+  "Large-Scale Protein & Language Models",
 ];
 
 // News Items
 export const newsItems = [
   {
-    date: "January 2025",
+    date: "2026",
     content:
-      'Our paper "Multiple Abstraction Level Retrieve Augment Generation" has been published on arXiv.',
+      'Our paper "Heterogeneous Aligned Fusion for Survival Prediction with Missing Modalities" has been accepted to Medical Imaging with Deep Learning (MIDL 2026).',
   },
   {
-    date: "April 2024",
+    date: "January 2025",
     content:
-      "Started as a Visiting Research Scientist at Brandeis University working on RAG systems.",
+      'Our paper "Multiple Abstraction Level Retrieve-Augment Generation" was released on arXiv.',
   },
   {
     date: "October 2023",
     content:
-      'Our paper "FiBiNet++: Reducing model size by low rank feature interaction layer for CTR prediction" has been published at CIKM\' 23.',
+      'Our paper "FiBiNet++: Reducing Model Size by Low-Rank Feature Interaction Layer for CTR Prediction" was published at CIKM 2023.',
   },
   {
     date: "December 2023",
-    content:
-      "Completed Master's degree in Computer Science at Brandeis University.",
+    content: "Completed M.S. in Computer Science at Brandeis University.",
   },
 ];
 
 // Education
 export const education = [
   {
-    degree: "Master of Science in Computer Science",
+    degree: "Ph.D. in Computer Science",
+    institution: "University of Texas at Arlington",
+    period: "Aug. 2024 - Present",
+    advisor: "Prof. Junzhou Huang",
+    status: "Ph.D. Student",
+  },
+  {
+    degree: "M.S. in Computer Science",
     institution: "Brandeis University",
     period: "Sep. 2021 - Dec. 2023",
-    gpa: "3.8/4.0",
-    courses:
-      "Deep Learning, Fundamentals of Natural Language Processing, Data Structures and the Fundamentals of Computing, Advanced Programming Techniques in Java, Discrete Structures, Theory of Computation, 3-D Animation, Operating Systems",
   },
   {
-    degree: "Bachelor of Science in Geology and Geophysics",
+    degree: "B.S. in Geology and Geophysics",
     institution: "Missouri University of Science and Technology",
     period: "Sep. 2019 - May 2021",
-    gpa: "4.0/4.0",
-    courses: "Computational Geophysics, Discrete Math, Global Tectonics",
   },
   {
-    degree: "Bachelor of Engineering",
+    degree: "B.E. in Resource Exploration Engineering",
     institution: "China University of Geosciences (Beijing)",
     period: "Sep. 2016 - May 2019",
-    major: "Resource Exploration Engineering (Energy)",
   },
 ];
 
@@ -107,6 +108,14 @@ export interface Publication {
   pdf?: string;
   code?: string;
   arxiv?: string;
+  /** Direct link to paper (PDF, OpenReview, etc.). Used when no single doi/pdf/arxiv applies. */
+  url?: string;
+  /** e.g. "To appear" */
+  status?: string;
+  /** Short topic tags for display */
+  tags?: string[];
+  /** Optional pipeline/figure image path under public/ (e.g. /publications/xxx.png) */
+  image?: string;
   isHighlighted?: boolean;
   abstract?: string;
 }
@@ -114,27 +123,54 @@ export interface Publication {
 export const publications: Publication[] = [
   {
     id: 1,
+    title:
+      "Heterogeneous Aligned Fusion for Survival Prediction with Missing Modalities",
+    authors: "Zheng, Z.; Guo, Y.; Hu, X.; Miao, Y.; Ma, H.; Gao, J.; Huang, J.",
+    venue: "Medical Imaging with Deep Learning (MIDL)",
+    year: 2026,
+    status: "To appear",
+    url: "https://openreview.net/pdf?id=XjyK23sUkI",
+    isHighlighted: true,
+    abstract:
+      "We study multimodal survival prediction under naturally missing modalities and propose a heterogeneous aligned fusion framework to improve robustness and cross-modality alignment.",
+    tags: [
+      "Multimodal Survival",
+      "Missing Modalities",
+      "Computational Pathology",
+      "Fusion",
+    ],
+    image: "/publications/midl-fusion-pipeline.png",
+  },
+
+  {
+    id: 2,
     title: "Multiple Abstraction Level Retrieve Augment Generation",
-    authors: "Zheng, Z., Ni, X., & Hong, P.",
+    authors: "Zheng, Z.; Ni, X.; Hong, P.",
     venue: "arXiv preprint",
     year: 2025,
     arxiv: "2501.16952",
+    url: "https://arxiv.org/abs/2501.16952",
     isHighlighted: true,
     abstract:
-      "This paper proposes a novel multi-scale Retrieval-Augmented Generation (RAG) algorithm that addresses problems like 'lost in the middle' and incomplete semantic context. The approach organizes documents into hierarchical nodes across multiple abstraction levels, enhancing RAG performance by 25.7% compared to traditional sentence splitter methods.",
+      "We propose MAL-RAG, a retrieval-augmented generation framework that retrieves evidence at multiple abstraction levels (multi-sentence, paragraph, section, document) to mitigate context fragmentation and the 'lost-in-the-middle' effect in scientific QA.",
+    tags: ["RAG", "Multi-level Retrieval", "Scientific QA"],
+    image: "/publications/mal-rag-pipeline.png",
   },
+
   {
-    id: 2,
+    id: 3,
     title:
-      "FiBiNet++: Reducing model size by low rank feature interaction layer for CTR prediction",
-    authors: "Zhang, P., Zheng, Z., & Zhang, J.",
-    venue:
-      "Proceedings of the 32nd ACM International Conference on Information and Knowledge Management (CIKM)",
+      "FiBiNet++: Reducing Model Size by Low-Rank Feature Interaction Layer for CTR Prediction",
+    authors: "Zhang, P.; Zheng, Z.; Zhang, J.",
+    venue: "CIKM '23",
     year: 2023,
     doi: "10.1145/3583780.3615242",
-    isHighlighted: true,
+    url: "https://dl.acm.org/doi/10.1145/3583780.3615242",
+    isHighlighted: false, // 建议把“高亮”留给当前biomed主线
     abstract:
-      "This paper introduces FiBiNet++, an optimized version of the FiBiNet recommendation system model. By implementing an innovative Low Rank Layer and transforming element-wise Hadamard product into an inner product method, we significantly reduced the model size by 12-16x while improving performance over state-of-the-art models.",
+      "We introduce a low-rank feature interaction layer to compress FiBiNet-style CTR models, substantially reducing non-embedding parameters while maintaining competitive performance.",
+    tags: ["Recommender Systems", "CTR Prediction", "Model Compression"],
+    image: "/publications/fibinet-pipeline.png",
   },
 ];
 
@@ -211,6 +247,69 @@ export const researchProjects: ResearchProject[] = [
   },
 ];
 
+// Projects page (AI Engineer / systems focus)
+export interface AIProjectArea {
+  id: number;
+  title: string;
+  highlights: string[];
+}
+
+export const aiProjectAreas: AIProjectArea[] = [
+  {
+    id: 1,
+    title: "RAG System Engineering",
+    highlights: [
+      "Data crawling and document ingestion",
+      "GROBID parsing and structured extraction",
+      "Embedding pipeline and retrieval",
+      "Vector DB and indexing",
+      "Evaluation framework (e.g. Ragas)",
+    ],
+  },
+  {
+    id: 2,
+    title: "Large-scale Training Infrastructure",
+    highlights: [
+      "Multi-GPU training and distributed experiments",
+      "Logging and experiment tracking",
+      "Gradient wrapper and custom hooks",
+      "Custom training loops and optimization",
+    ],
+  },
+  {
+    id: 3,
+    title: "Recommender System Optimization",
+    highlights: [
+      "Low-rank feature interaction layers",
+      "Performance benchmarking and ablation",
+      "Model compression and efficiency",
+    ],
+  },
+  {
+    id: 4,
+    title: "Biomedical Pipeline",
+    highlights: [
+      "WSI preprocessing and patch sampling",
+      "Multimodal fusion pipelines",
+      "Survival prediction system deployment",
+    ],
+  },
+];
+
+/** AI Engineering Skills (positioning, not resume-style list). */
+export const aiEngineeringSkills = [
+  "Large-scale model training (PyTorch, multi-GPU)",
+  "Custom optimization strategies",
+  "Multimodal data processing",
+  "Model compression & efficiency",
+  "Distributed experiment management",
+  "End-to-end ML system deployment",
+];
+
+/** Short tagline for Projects page. */
+export const projectsPageTagline =
+  "AI Systems Engineer with research-level understanding of optimization and representation learning.";
+
 // Teaching Experience
 export const teachingExperience = [
   {
@@ -225,82 +324,97 @@ export const teachingExperience = [
   },
 ];
 
-// Projects
+/** Projects (1–2 strongest; kept short for CV. Main academic narrative is aiProjectAreas + researchProjects.) */
 export const projects = [
-  {
-    title: "Hire Me Now",
-    link: "https://hiremenow-ai.com",
-    period: "Mar. 2023",
-    technologies:
-      "Docker, AWS, MERN stack, Django, Nginx, Certbot, Stripe, RESTful, LLM model",
-    highlights: [
-      "Designed and developed a full-stack website powered by LLM models aimed at assisting employees in their job search competition, utilizing Django framework, and MERN stack (MongoDB, Express.js, React, Node.js)",
-      "Built Express and Django microservices with serverless REST API. The Django implemented with PEP8 code style",
-      "Architected a React frontend with Redux, Google Authentication and Stripe API to forbid 100% unauthorized access and enhance data status management",
-      "Configured Nginx and Certbot with SSL-certification to facilitate communications between different services",
-      "Containerized the entire system using Docker and developed shell scripts to automate installation and deployment",
-      "Deployed the whole system on the AWS EC2 service and incorporated a domain name using GoDaddy and Route 53",
-    ],
-  },
   {
     title: "Multimodal QA system",
     period: "Nov. 2024",
-    technologies: "LLM, Transformer, CNN, Decoder",
+    technologies: "LLM, Transformer, PaliGemma",
     highlights: [
-      "Reproduced and analyzed the multimodal vision-language model, exploring its architecture and understanding the integration of visual and textual components for vision-language tasks.",
-      "Fine-tuned the model on question answering benchmark VQAv2 and ScienceQA, achieving state-of-the-art results across various benchmarks.",
-      "Implemented and tested the multimodal pre-training process for PaliGemma, experimenting with different image resolutions (224px, 448px, and 896px) to optimize performance for high-resolution image tasks.",
+      "Reproduced and analyzed multimodal vision-language models; fine-tuned on VQAv2 and ScienceQA.",
+      "Tested image resolutions (224–896px) and integration of visual and textual components.",
     ],
   },
   {
     title: "Predicting Effective Arguments",
     link: "https://github.com/zz9tf/DL-Predicting-Effective-Arguments",
     period: "Mar. 2023",
-    technologies: "RNN, GRU, LSTM, Bert, Pytorch, Matplotlib",
+    technologies: "RNN, LSTM, BERT, PyTorch",
     highlights: [
-      "Preprocess datasets into Torchtext data iterators, including steps such as lowercasing, removing stopwords, performing stemming and lemmatization, and handling out-of-vocabulary (OOV) words.",
-      "Designed and trained various neural network models, including RNN, LSTM, GRU, and BERT, to classify argumentative elements within essays written by U.S. students.",
-      "Conducted an ablation study combined with a grid search to systematically evaluate model performance, achieving the lowest loss and highest accuracy across different architectures.",
+      "Trained RNN/LSTM/BERT models to classify argumentative elements in student essays.",
+      "Ablation and grid search for optimal architecture; achieved best accuracy on benchmark.",
     ],
   },
 ];
 
-// Technical Skills
-export const technicalSkills = {
-  languages:
-    "Python, Java, HTML/CSS, JavaScript, TypeScript, R, C, SQL, Shell Script, Latex, Go",
-  devTools:
-    "Docker, AWS, Git, MongoDB, Nginx, Redis, MySQL, Cloudflare, nodemon, firebase, Google OAuth, Stripe",
-  frameworks:
-    "SpringBoot, SpringCloud, React, Django, Node.js, GraphQL, Pytorch, Tensorflow, Pandas, Numpy, babel.js, bootstrap, Redux",
-  aiMachineLearning: [
-    "Large Language Models",
-    "Retrieval-Augmented Generation",
-    "PyTorch & TensorFlow",
-    "Natural Language Processing",
-    "Deep Learning Architecture Design",
-    "Recommendation Systems",
-  ],
-  developmentDeployment: [
-    "Full-Stack Web Development",
-    "Docker Containerization",
-    "AWS Cloud Services",
-    "Microservices Architecture",
-    "Database Design",
-    "RESTful APIs",
-  ],
-};
+/** Short technical skills tagline (5–8 keywords). Full list belongs in CV PDF. */
+export const technicalSkills = [
+  "PyTorch",
+  "TensorFlow",
+  "RAG & LLMs",
+  "Multimodal ML",
+  "Docker & AWS",
+  "Python",
+  "Recommendation Systems",
+];
 
-// Research Overview
-export const researchOverview = {
-  description:
-    "My research lies at the intersection of large language models, deep learning, and practical AI applications. I am particularly interested in:",
-  interests: [
-    "Retrieval-Augmented Generation (RAG) systems",
-    "Multi-level information extraction and summarization",
-    "Recommendation systems optimization",
-    "Multimodal learning approaches",
-  ],
-  currentFocus:
-    'Currently, my focus is on developing improved methods for knowledge retrieval and integration with large language models, addressing challenges like the "lost in the middle" phenomenon and incomplete semantic context in traditional RAG systems.',
-};
+// Research page: vision + themes (narrative, "what I'm building")
+export const researchVision =
+  "I study learning dynamics in multimodal biomedical AI systems, seeking to understand how information is aligned, injected, and optimized under real-world heterogeneity—including missing or incomplete data. Grounded in biomedical intelligence, my work aims to uncover principles that naturally extend to the broader design of scalable AI systems, including large language models and intelligent agents.";
+
+export interface ResearchThemePaper {
+  label: string;
+  url: string;
+}
+
+export interface ResearchTheme {
+  id: number;
+  title: string;
+  /** 1 short paragraph: problem / motivation */
+  problemContext: string;
+  /** 1 short paragraph: what we do */
+  whatWeDo: string;
+  /** Figure or pipeline image path under public/ */
+  image: string;
+  /** 1–2 related paper links */
+  papers: ResearchThemePaper[];
+}
+
+export const researchThemes: ResearchTheme[] = [
+  {
+    id: 1,
+    title: "Multimodal Survival & Missing Modality Learning",
+    problemContext:
+      "Real-world biomedical data often has naturally missing modalities (e.g., one patient has imaging but no genomics). Standard fusion assumes all modalities are present and breaks under missingness. We need alignment and robustness that work when modalities are incomplete.",
+    whatWeDo:
+      "We build heterogeneous aligned fusion frameworks so that representations stay comparable across modalities and missing patterns. Our MIDL work focuses on survival prediction: we align modality-specific encoders and fuse with mechanisms that remain valid under missing modalities, improving both robustness and cross-modality consistency.",
+    image: "/research-themes/multimodal-alignment.png",
+    papers: [
+      {
+        label:
+          "Heterogeneous Aligned Fusion for Survival Prediction (MIDL 2026)",
+        url: "https://openreview.net/pdf?id=XjyK23sUkI",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Optimization Dynamics in Multi-Task Learning",
+    problemContext:
+      "Multi-task and multi-objective training often suffers from gradient conflict: objectives pull parameters in different directions. How shared vs. task-specific subspaces evolve, and how that affects representation stability, is still poorly understood.",
+    whatWeDo:
+      "We study optimization dynamics in multi-objective settings—how gradient conflict manifests, how parameter subspaces (shared vs. private) evolve during training, and how this affects representation quality in biomedical models. The goal is to design training and architecture choices that improve alignment and stability.",
+    image: "/research-themes/optimization-dynamics.png",
+    papers: [],
+  },
+  {
+    id: 3,
+    title: "Information Injection in Foundation Models",
+    problemContext:
+      "Foundation models (e.g., protein models, LLMs) encode huge amounts of structure. Injecting new information or aligning latent spaces in a principled way, especially without full supervision, remains an open challenge.",
+    whatWeDo:
+      "We work on how to inject and align information in foundation-scale systems: probing and influencing protein model representations, and understanding LLM latent space structure for unsupervised or light-touch alignment. The aim is more principled methods for information injection and representation learning at scale.",
+    image: "/research-themes/information-injection.png",
+    papers: [],
+  },
+];
