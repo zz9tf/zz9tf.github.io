@@ -22,7 +22,14 @@ const ResearchPage = () => {
             Research Vision
           </h2>
           <p className="text-gray-700 text-lg leading-relaxed">
-            {researchVision}
+            {researchVision.map((vision, index) => (
+              <p
+                className="text-gray-700 text-lg leading-relaxed mb-4"
+                key={index}
+              >
+                {vision}
+              </p>
+            ))}
           </p>
         </section>
 
