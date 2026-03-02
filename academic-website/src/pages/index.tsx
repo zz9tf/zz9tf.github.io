@@ -40,7 +40,7 @@ export default function Home() {
               </p>
 
               <p className="text-center text-sm text-gray-600 mt-4 leading-relaxed italic">
-                {homeBlurb}
+                {personalInfo.homeBlurb}
               </p>
             </div>
           </div>
