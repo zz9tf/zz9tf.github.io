@@ -33,7 +33,7 @@ export const aboutMe = {
     "Welcome to my academic website. I am a Ph.D. student in Computer Science at the University of Texas at Arlington, advised by Prof. Junzhou Huang. My research lies at the intersection of biomedical machine learning, multi-modal representation learning, and optimization dynamics. I am particularly interested in how information is injected, aligned, and optimized across heterogeneous modalities in complex learning systems.",
     "My recent work focuses on heterogeneous aligned fusion for survival prediction under missing modalities (MIDL), multi-modal computational pathology, and gradient conflict in multi-objective learning. I investigate how shared and task-specific parameter subspaces evolve during training, and how optimization dynamics affect representation stability in biomedical models.",
     "More broadly, I am interested in understanding how large models—such as protein foundation models and large language models—encode and transfer structured information. I aim to explore principled methods for information injection and unsupervised representation learning in foundation-scale systems.",
-    "Previously, I worked on efficient deep learning architectures and recommendation systems, including a low-rank feature interaction method presented at ICML 2023. However, my current focus is on developing a deeper theoretical and empirical understanding of learning dynamics in multi-modal and multi-objective settings.",
+    "Previously, I worked on efficient deep learning architectures and recommendation systems, including a low-rank feature interaction method presented at ICML 2023. Mzhegey current focus is on developing a deeper theoretical and empirical understanding of learning dynamics in multi-modal and multi-objective settings.",
   ],
 };
 
@@ -247,7 +247,7 @@ export const researchProjects: ResearchProject[] = [
   },
 ];
 
-// Projects page (AI Engineer / systems focus)
+// Projects page (AI Engineer / systems focus — targeting Big Tech & Pharma)
 export interface AIProjectArea {
   id: number;
   title: string;
@@ -257,58 +257,57 @@ export interface AIProjectArea {
 export const aiProjectAreas: AIProjectArea[] = [
   {
     id: 1,
-    title: "RAG System Engineering",
+    title: "Biomedical & Computational Pathology AI",
     highlights: [
-      "Data crawling and document ingestion",
-      "GROBID parsing and structured extraction",
-      "Embedding pipeline and retrieval",
-      "Vector DB and indexing",
-      "Evaluation framework (e.g. Ragas)",
+      "Multimodal alignment for 7 modalities under missing-modality settings",
+      "Heterogeneous fusion for survival prediction (MIDL 2026)",
+      "Protein foundation model fine-tuning and structured knowledge injection",
+      "WSI preprocessing, patch sampling, and multimodal fusion pipelines",
     ],
   },
   {
     id: 2,
-    title: "Large-scale Training Infrastructure",
+    title: "LLM & RAG System Engineering",
     highlights: [
-      "Multi-GPU training and distributed experiments",
-      "Logging and experiment tracking",
-      "Gradient wrapper and custom hooks",
-      "Custom training loops and optimization",
+      "Hierarchical RAG with multi-level document abstraction (8,000+ PDFs)",
+      "Document ingestion: Grobid, LlamaIndex, Linq-Embed-Mistral, Vicuna-13B",
+      "MapReduce summarization and semantic segmentation workflows",
+      "RAGAS evaluation framework — 25.73% improvement over baseline",
     ],
   },
   {
     id: 3,
-    title: "Recommender System Optimization",
+    title: "Large-scale Training & Optimization",
     highlights: [
-      "Low-rank feature interaction layers",
-      "Performance benchmarking and ablation",
-      "Model compression and efficiency",
+      "Distributed training (DDP), mixed precision (AMP), FlashAttention",
+      "Multi-task learning and gradient conflict analysis",
+      "Experiment tracking and custom training loops",
     ],
   },
   {
     id: 4,
-    title: "Biomedical Pipeline",
+    title: "Model Efficiency & Recommender Systems",
     highlights: [
-      "WSI preprocessing and patch sampling",
-      "Multimodal fusion pipelines",
-      "Survival prediction system deployment",
+      "Low-rank feature interaction layers (FiBiNet++, CIKM 2023)",
+      "12–16x model size reduction with 37.5–81% efficiency gains",
+      "Benchmarking: DNN, DeepFM, xDeepFM, DCN, AutoInt, FiBiNet",
     ],
   },
 ];
 
-/** AI Engineering Skills (positioning, not resume-style list). */
+/** AI Engineering Skills (aligned with resume; targeting Big Tech & Pharma). */
 export const aiEngineeringSkills = [
-  "Large-scale model training (PyTorch, multi-GPU)",
-  "Custom optimization strategies",
-  "Multimodal data processing",
-  "Model compression & efficiency",
-  "Distributed experiment management",
-  "End-to-end ML system deployment",
+  "PyTorch, TensorFlow, HuggingFace Transformers",
+  "Fine-tuning (LoRA/PEFT) & multimodal systems",
+  "RAG systems, embedding models, evaluation frameworks",
+  "Distributed training (DDP), mixed precision (AMP)",
+  "Large-scale data preprocessing & feature engineering",
+  "Docker, AWS, GPU training, experiment tracking",
 ];
 
 /** Short tagline for Projects page. */
 export const projectsPageTagline =
-  "AI Systems Engineer with research-level understanding of optimization and representation learning.";
+  "AI Engineer focused on biomedical ML, LLM systems, and scalable training — targeting roles at Big Tech and Pharma.";
 
 // Teaching Experience
 export const teachingExperience = [

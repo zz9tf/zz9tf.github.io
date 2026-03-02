@@ -14,44 +14,45 @@ import {
 const ProjectsPage = () => {
   return (
     <Layout title={`Projects | ${personalInfo.name}`}>
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-800 mb-3">Projects</h1>
-        <p className="text-gray-600 text-lg mb-10">{projectsPageTagline}</p>
+      <div className="max-w-3xl mx-auto">
+        <header className="mb-16">
+          <h1 className="text-3xl font-semibold tracking-tight text-gray-900 mb-2">
+            Projects
+          </h1>
+          <p className="text-gray-500 text-base leading-relaxed">
+            {projectsPageTagline}
+          </p>
+        </header>
 
-        <div className="space-y-8">
+        <div className="space-y-14">
           {aiProjectAreas.map((area) => (
-            <section
-              key={area.id}
-              className="bg-white rounded-lg border border-gray-100 overflow-hidden"
-            >
-              <div className="p-6">
-                <h2 className="text-xl font-bold text-gray-800 mb-4">
-                  {area.title}
-                </h2>
-                <ul className="space-y-2">
-                  {area.highlights.map((item, i) => (
-                    <li
-                      key={i}
-                      className="text-gray-600 text-sm flex items-start gap-2"
-                    >
-                      <span className="text-blue-500 shrink-0 mt-0.5">▸</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <section key={area.id} className="group">
+              <h2 className="text-lg font-medium text-gray-900 mb-4 pl-4 border-l-2 border-gray-300 group-hover:border-blue-400 transition-colors">
+                {area.title}
+              </h2>
+              <ul className="space-y-3">
+                {area.highlights.map((item, i) => (
+                  <li
+                    key={i}
+                    className="text-gray-600 text-[15px] leading-relaxed flex items-start gap-3"
+                  >
+                    <span className="text-blue-400 shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </section>
           ))}
         </div>
 
-        <section className="mt-12 pt-8 border-t border-gray-200">
-          <h2 className="text-xl font-bold text-gray-800 mb-4">
+        <section className="mt-16 pt-12 border-t border-gray-100">
+          <h2 className="text-lg font-medium text-gray-900 mb-5 pl-4 border-l-2 border-gray-300">
             AI Engineering Skills
           </h2>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-gray-600 text-sm">
+          <ul className="flex flex-wrap gap-x-6 gap-y-2 text-gray-600 text-[15px]">
             {aiEngineeringSkills.map((skill, i) => (
-              <li key={i} className="flex items-start gap-2">
-                <span className="text-blue-500 shrink-0">•</span>
+              <li key={i} className="flex items-center gap-2">
+                <span className="text-blue-400">·</span>
                 <span>{skill}</span>
               </li>
             ))}

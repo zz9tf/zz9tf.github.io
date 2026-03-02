@@ -88,29 +88,12 @@
 }
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
+  \vspace{-2pt}\item\vspace{2pt}
     \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & \textbf{\small #2} \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-% \newcommand{\resumeSubheadingSchool}[5]{
-%   \vspace{-2pt}\item
-%     \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
-%       \textbf{#1} & \textbf{\small #2} \\
-%       \text{\small#3} & \text{\small #4} \\
-%       \multicolumn{2}{l}{\textit{\small#5} }
-%     \end{tabular*}\vspace{-7pt}
-% }
-
-\newcommand{\resumeSubheadingSchool}[5]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & \textbf{\small #2} \\
-      \text{\small#3} & \text{\small #4} \\
-      \multicolumn{2}{p{\textwidth}}{\hangindent=15pt\hangafter=0\textit{\small#5}}
-    \end{tabular*}\vspace{-7pt}
+    
+    \end{tabular*}\vspace{-5pt}
 }
 
 \newcommand{\resumeSubSubheading}[2]{
@@ -151,10 +134,10 @@
 
 \begin{center}
     {\Huge \scshape Zheng Zheng} \\ \vspace{1pt}
-    829 South Ave., Plainfield, NJ, 07062 \\ \vspace{1pt}
-    \small \raisebox{-0.1\height}\faPhone\ 573-202-1823 ~ \href{mailto:zhengzheng@brandeis.edu}{\raisebox{-0.2\height}\faEnvelope\  \underline{zhengzheng@brandeis.edu}} ~ 
-    \href{https://www.linkedin.com/in/zheng-zheng-082420217/}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/zheng-zheng-082420217}}  ~
-    \href{https://zz9tf.github.io/zheng_website/}{\raisebox{-0.2\height}\faGithub\ \underline{github portfolio}}
+    Arlington, TX, USA, 76019 \\ \vspace{1pt}
+    \small \raisebox{-0.1\height}\faPhone\ 401-215-4595 ~ \href{mailto:zxz7934@mavs.uta.edu}{\raisebox{-0.2\height}\faEnvelope\ \underline{zxz7934@mavs.uta.edu}} ~ 
+    \href{https://www.linkedin.com/in/zheng-zheng-082420217/}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin}}  ~
+    \href{https://zz9tf.github.io/}{\raisebox{-0.2\height}\faGithub\ \underline{portfolio}}
     \vspace{-7pt}
 \end{center}
 
@@ -162,40 +145,78 @@
 %-----------EDUCATION-----------
 \section{Education}
   \resumeSubHeadingListStart
-    % \resumeSubheadingSchool
-    %   {Brandeis University}{Sep. 2021 -- Dec. 2023}
-    %   {Master of Science in Computer Science}{GPA: 3.78/4.0}
-    %   {Relevant Courses: Deep Learning (A), Fundamentals of Natural Language Processing (A), Data Structures and the Fundamentals of Computing (A), Advanced Programming Techniques in Java (A-), Discrete Structures (A), Theory of Computation (A), 3-D Animation(A), Operating Systems (B)}
-    
+
+    \resumeSubheading
+      {University of Texas at Arlington}{Aug. 2024 -- Present}
+      {Ph.D. in Computer Science}{Advisor: Prof. Junzhou Huang}
+      \resumeItemListStart
+        \resumeItem{Developed multimodal alignment framework for 7 modalities under missing-modality settings in pathology prediction.}
+            
+        \resumeItem{Analyzed and designed algorithms for multi-type gradient conflict in multi-task learning, including structural subspace conflict, batch-induced stochastic noise conflict, and dominant gradient imbalance.}
+
+        \resumeItem{Designed and fine-tuned protein foundation models (PTM) and implemented structured knowledge injection mechanisms to enhance representation adaptation and transferability.}
+      \resumeItemListEnd
+      
+    \vspace{2pt}
+
     \resumeSubheading
       {Brandeis University}{Sep. 2021 -- Dec. 2023}
-      {Master of Science in Computer Science}{GPA: 3.8/4.0}
+      {Master of Science in Computer Science}{}
       \resumeItemListStart
-          \resumeItem{Relevant Courses: Deep Learning (A), Fundamentals of Natural Language Processing (A), Data Structures and the Fundamentals of Computing (A), Advanced Programming Techniques in Java (A-), Discrete Structures (A), Theory of Computation (A), 3-D Animation(A), Operating Systems (B)}
+      %     \resumeItem{Relevant Courses: Deep Learning (A), Fundamentals of Natural Language Processing (A), Data Structures and the Fundamentals of Computing (A), Advanced Programming Techniques in Java (A-), Discrete Structures (A), Theory of Computation (A), 3-D Animation(A), Operating Systems (B)}
       \resumeItemListEnd
       
     \vspace{2pt}
     
     \resumeSubheading
       {Missouri University of Science and Technology }{Sep. 2019 -- May 2021}
-      {Bachelor of Science in Geology and Geophysics }{GPA: 4.0/4.0}
+      {Bachelor of Science in Geology and Geophysics }{}
       \resumeItemListStart
-          \resumeItem{Relevant Courses: Computational Geophysics (A), Discrete Math (A), Global Tectonics (A)}
+      %     \resumeItem{Relevant Courses: Computational Geophysics (A), Discrete Math (A), Global Tectonics (A)}
       \resumeItemListEnd
+      
 
   \resumeSubHeadingListEnd
   \vspace{-7pt}
 
 %-----------Publication-----------
-\section{Publication}
+% \section{Publication}
+%     \begingroup
+%     \renewcommand{\section}[2]{}%
+
+%     \begin{thebibliography}{9}
+
+%     \bibitem{Zhang2023}
+%     Pengtao Zhang, \textbf{Zheng Zheng}, and Junlin Zhang. FiBiNet++: Reducing model size by low rank feature interaction layer for CTR prediction. In \textit{Proceedings of the 32nd ACM International Conference on Information and Knowledge Management}, \href{https://dl.acm.org/doi/10.1145/3583780.3615242}{\color{blue}CIKM' 23}, pages 4425–4429, New York, NY, USA, 2023. Association for Computing Machinery.
+    
+%     \end{thebibliography}
+%     \endgroup
+\section{Publications}
     \begingroup
     \renewcommand{\section}[2]{}%
 
     \begin{thebibliography}{9}
 
+    \bibitem{Zheng2026}
+    \textbf{Zheng Zheng}, Y. Guo, X. Hu, Y. Miao, H. Ma, J. Gao, and J. Huang.
+    Heterogeneous Aligned Fusion for Survival Prediction with Missing Modalities.
+    In \textit{Medical Imaging with Deep Learning (MIDL)}, 2026.
+    (To appear). \href{https://openreview.net/pdf?id=XjyK23sUkI}{\color{blue}Paper}
+
+    \bibitem{Zheng2025}
+    \textbf{Zheng Zheng}, X. Ni, and P. Hong.
+    Multiple Abstraction Level Retrieve Augment Generation.
+    \textit{arXiv:2501.16952}, 2025.\href{https://arxiv.org/pdf/2501.16952}{\color{blue} Paper}
+
     \bibitem{Zhang2023}
-    Pengtao Zhang, \textbf{Zheng Zheng}, and Junlin Zhang. FiBiNet++: Reducing model size by low rank feature interaction layer for CTR prediction. In \textit{Proceedings of the 32nd ACM International Conference on Information and Knowledge Management}, \href{https://dl.acm.org/doi/10.1145/3583780.3615242}{\color{blue}CIKM' 23}, pages 4425–4429, New York, NY, USA, 2023. Association for Computing Machinery.
-    
+    Pengtao Zhang, \textbf{Zheng Zheng}, and Junlin Zhang.
+    FiBiNet++: Reducing model size by low rank feature interaction layer for CTR prediction.
+    In \textit{Proceedings of the 32nd ACM International Conference on Information and Knowledge Management},
+    CIKM' 23,
+    pages 4425–4429, New York, NY, USA, 2023.
+    Association for Computing Machinery.
+    \href{https://dl.acm.org/doi/10.1145/3583780.3615242}{\color{blue} Paper}
+
     \end{thebibliography}
     \endgroup
         
@@ -207,35 +228,42 @@
     
   \resumeSubHeadingListStart
     \resumeSubheading
-      {MAL RAG - Chunking Optimization $|$ \href{https://arxiv.org/pdf/2501.16952}{\color{blue}{arXiv}}}{Apr. 2024 - Current}
+      {Multiple Abstraction Level Retrieval-Augmented Generation}{Apr. 2024 - Apr.2025}
       {Visiting Research Scientist with Prof. Pengyu Hong}{Waltham, MA}
-      \resumeItemListStart
-        \resumeItem{Designed and implemented an end-to-end \textbf{Retrieval-Augmented Generation (RAG)} system pipeline, encompassing data gathering, preprocessing, extraction, model deployment, and performance evaluation for optimization.}
-        \resumeItem{Collected and curated a dataset of over 8,000 documents using advanced web scraping techniques (\textbf{Requests, BeautifulSoup4, Selenium-wire}) and leveraged \textbf{Grobid} for parsing raw documents into structured, hierarchical nodes across four abstract levels using \textbf{Llama-index}.}
-        \resumeItem{Employed a \textbf{semantic} approach with \textbf{Linq-Embed-Mistral} to split long texts and utilized \textbf{MapReduce} with the \textbf{Vicuna-13B} model to distill them into concise key information, enhancing text processing efficiency.}
-        \resumeItem{Created specialized QAR (question-answer-reason) datasets with \textbf{GPT-4-mini} based on specific node contexts selected by the \textbf{Bert classification model} and artificial rules.}
-        \resumeItem{Utilized \textbf{Linq-Embed-Mistral} to create embeddings and performed dimensionality reduction and clustering analysis.}
-        \resumeItem{Designed a robust evaluation framework for the RAG system using Ragas metrics.}
-        \resumeItem{Compared to the traditional RAG method, MAL RAG improves Ragas-based evaluation score answer correctness by \textbf{25.73\%}}
-        
-      \resumeItemListEnd
-      \vspace{-8pt}
-    \resumeSubHeadingListEnd
+      % \resumeItemListStart
+        % \resumeItem{Designed and implemented an end-to-end \textbf{Retrieval-Augmented Generation (RAG)} system pipeline, encompassing data gathering, preprocessing, extraction, model deployment, and performance evaluation for optimization.}
+        % \resumeItem{Collected and curated a dataset of over 8,000 documents using advanced web scraping techniques (\textbf{Requests, BeautifulSoup4, Selenium-wire}) and leveraged \textbf{Grobid} for parsing raw documents into structured, hierarchical nodes across four abstract levels using \textbf{Llama-index}.}
+        % \resumeItem{Employed a \textbf{semantic} approach with \textbf{Linq-Embed-Mistral} to split long texts and utilized \textbf{MapReduce} with the \textbf{Vicuna-13B} model to distill them into concise key information, enhancing text processing efficiency.}
+        % \resumeItem{Created specialized QAR (question-answer-reason) datasets with \textbf{GPT-4-mini} based on specific node contexts selected by the \textbf{Bert classification model} and artificial rules.}
+        % \resumeItem{Utilized \textbf{Linq-Embed-Mistral} to create embeddings and performed dimensionality reduction and clustering analysis.}
+        % \resumeItem{Designed a robust evaluation framework for the RAG system using Ragas metrics.}
+        % \resumeItem{Improved RAGAS-based answer correctness by \textbf{25.73\%} over a standard RAG baseline.}
+    \resumeItemListStart
+    \resumeItem{Architected a hierarchical Retrieval-Augmented Generation (RAG) system with multi-level document abstraction to support coarse-to-fine retrieval.}
     
-    \resumeSubHeadingListStart
+    \resumeItem{Built a large-scale document ingestion and parsing pipeline (8,000+ PDFs) using \textbf{Requests}, \textbf{BeautifulSoup4}, \textbf{Selenium-wire}, and \textbf{Grobid}, converting raw documents into structured nodes across four abstraction levels via \textbf{LlamaIndex}.}
+    
+    \resumeItem{Designed semantic segmentation and embedding workflows with \textbf{Linq-Embed-Mistral}, and implemented MapReduce-based summarization using \textbf{Vicuna-13B} to compress long-context information.}
+    
+    \resumeItem{Constructed QAR (question-answer-reason) datasets using \textbf{GPT-4-mini} with rule-based and BERT-assisted node selection strategies to enhance supervision quality.}
+    
+    \resumeItem{Developed evaluation and benchmarking framework using \textbf{RAGAS} metrics, achieving a \textbf{25.73\%} improvement in answer correctness over standard RAG baselines.}
+    
+    \resumeItemListEnd
+    \vspace{-2pt}
+    
     \resumeSubheading
-      {FiBiNet++ - Recommended System $|$ \href{https://arxiv.org/pdf/2209.05016}{\color{blue}{arXiv}}}{2022 - 2023}
+      {FiBiNet++ - Recommended System}{2022 - 2023}
       {Research Fellow}{Remote}
       \resumeItemListStart
         \resumeItem{ Conducted research focused on optimizing the model structure of both \textbf{bi-linear} and \textbf{SENet} structures within Recommandation System model \textbf{FibiNet} based on \textbf{Tensorflow} framework}
-        \resumeItem{Preprocessed, analyzed, and visualized datasets using \textbf{Pandas} and \textbf{NumPy}, conducting assessments of basic statistical properties, distribution patterns, and correlations.}
         \resumeItem{ Designed and implemented an innovative "Low Rank Layer" and also transformed the \textbf{element-wise Hadamard product} into an \textbf{inner product} method within the bi-linear interaction, leading to a significant reduction in the size of the FiBiNet model}
         \resumeItem{ Enhanced the efficiency of the "squeeze" step in the SENet structure by strategically splitting data points into multiple groups, improving the model's ability to capture one-dimensional features }
         \resumeItem{ Conducted rigorous benchmarking and performance evaluations of various models including \textbf{DNN}, \textbf{DeepFM}, \textbf{xDeepFM}, \textbf{DCN}, \textbf{AutoInt}, \textbf{DCN v2}, \textbf{FiBiNet}, and the newly developed \textbf{FiBiNet++}, achieving significant improvements in training and inference efficiencies, ranging from \textbf{37.50\% to 81.03\%} across the datasets}
         \resumeItem{Achieved a substantial reduction in model size for \textbf{FiBiNet}, decreasing it by \textbf{12x to 16x} across datasets, while also delivering remarkable performance improvements over state-of-the-art models}
     \resumeItemListEnd
-      \resumeSubHeadingListEnd
-      \vspace{-5pt}
+    \resumeSubHeadingListEnd
+    \vspace{-5pt}
 \vspace{-7pt}
 
 %-----------EXPERIENCE-----------
@@ -244,6 +272,12 @@
     
   \resumeSubHeadingListStart
     \resumeSubheading
+      {University of Texas at Arlington}{Jan. 2026 - Present}
+      {Teaching Assistant}{Arlington, TX}
+      \resumeItemListStart
+        \resumeItem{ CSE-1325 : Object-Oriented Programming (Java) - Spring 2026 }
+      \resumeItemListEnd
+    \resumeSubheading
       {Brandeis Computer Science Department}{Sep. 2022 - May. 2023}
       {Teaching Assistant with Prof. Timothy J. Hickey}{Waltham, MA}
       \resumeItemListStart
@@ -251,8 +285,6 @@
         \resumeItem{ COSI-153A : Mobile Application Development - Summer 2023} 
         \resumeItem{ COSI-29A : Discrete Structures - Fall 2023 } 
       \resumeItemListEnd
-      \vspace{-5pt}
-      
     \resumeSubHeadingListEnd
 \vspace{-7pt}
 
@@ -260,7 +292,8 @@
 \section{Projects}
     \resumeSubHeadingListStart
         \resumeProjectHeading
-          {\textbf{Hire Me Now \href{https://hiremenow-ai.com}{\color{blue}{alive!}}} $|$ \emph{Docker, AWS, MERN stack, Django, Nginx, Certbot, Stripe, RESTful, LLM model}}{Mar. 2023}
+          {\textbf{Hire Me Now} $|$ \emph{Docker, AWS, MERN stack, Django, Nginx, Certbot, Stripe, RESTful, LLM model}}{Mar. 2023}
+          \vspace{-6pt}
           \resumeItemListStart
             \resumeItem{Designed and developed a full-stack website powered by \textbf{LLM} models aimed at assisting employees in their  job search competition, utilizing \textbf{Django} framework, and \textbf{MERN} stack (MongoDB, Express.js, React, Node.js)}
             \resumeItem{Built \textbf{Express} and \textbf{Django} microservices with serverless \textbf{REST API}. The Django implemented with \textbf{PEP8} code style}
@@ -272,6 +305,7 @@
         \vspace{-5pt}
       \resumeProjectHeading
           {\textbf{Multimodal QA system} $|$ \emph{LLM, Transformer, CNN, Decoder}}{Nov. 2024}
+          \vspace{-6pt}
           \resumeItemListStart
             \resumeItem{Reproduced and analyzed the \textbf{multimodal vision-language model}, exploring its architecture and understanding the integration of visual and textual components for vision-language tasks.}
             \resumeItem{Fine-tuned the model on question answering benchmark \textbf{VQAv2} and \textbf{ScienceQA}, achieving state-of-the-art results across various benchmarks.}
@@ -283,7 +317,8 @@
     \resumeSubHeadingListEnd
     \resumeSubHeadingListStart
       \resumeProjectHeading
-          {\textbf{Predicting Effective Arguments \href{https://github.com/zz9tf/DL-Predicting-Effective-Arguments}{\color{blue}{github}}} $|$ \emph{RNN, GRU, LSTM, Bert, Pytorch, Matplotlib}}{Mar. 2023}
+          {\textbf{Predicting Effective Arguments} $|$ \emph{RNN, GRU, LSTM, Bert, Pytorch, Matplotlib}}{Mar. 2023}
+          \vspace{-6pt}
           \resumeItemListStart
             \resumeItem{Preprocess datasets into Torchtext data iterators, including steps such as \textbf{lowercasing}, \textbf{removing stopwords}, performing \textbf{stemming} and \textbf{lemmatization}, and handling \textbf{out-of-vocabulary (OOV)} words.}
             \resumeItem{Designed and trained various neural network models, including \textbf{RNN}, \textbf{LSTM}, \textbf{GRU}, and \textbf{BERT}, to classify argumentative elements within essays written by U.S. students.}
@@ -298,14 +333,14 @@
 %
 %-----------PROGRAMMING SKILLS-----------
 \section{Technical Skills}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Languages}{: Python, Java, HTML/CSS, JavaScript, TypeScript, R, C, SQL, Shell Script, Latex, Go } \\
-    
-     \textbf{Dev Tools}{: Docker, AWS, Git, MongoDB, Nginx, Redis,  MySQL, Cloudflare, nodemon, firebase, Google OAuth, Stripe} \\
-    }}
-    
-    \textbf{Frameworks}{: SpringBoot, SpringCloud, React, Django, Node.js, GraphQL, Pytorch, Tensorflow, Pandas, Numpy, babel.js, bootstrap, Redux} \\
- \end{itemize}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \item \small{
+    \textbf{Programming:} Python (advanced), Java, SQL, Shell, Go \\
+    \textbf{Deep Learning:} PyTorch, TensorFlow, Distributed Training (DDP), Mixed Precision (AMP), Gradient Optimization, Multi-Task Learning, FlashAttention \\
+    \textbf{LLM Engineering:} Transformers (HuggingFace), Fine-tuning (LoRA/PEFT), RAG Systems, Embedding Models, Prompt Optimization, Evaluation Frameworks, Multimodal Systems \\
+    \textbf{Data \& Modeling:} Large-scale data preprocessing, Feature Engineering, Vector Indexing, Clustering \\
+    \textbf{Systems \& Infrastructure:} Docker, AWS (EC2), Linux, GPU Training, Experiment Tracking, Git
+  }
+\end{itemize}
 
 \end{document}
