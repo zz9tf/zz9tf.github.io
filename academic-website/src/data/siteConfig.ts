@@ -21,6 +21,12 @@ export const personalInfo = {
     '\"Understanding how structured information and optimization dynamics shape learning systems.\"',
 };
 
+/** Advisor information (name + homepage URL) */
+export const advisor = {
+  name: "Prof. Junzhou Huang",
+  url: "https://ranger.uta.edu/~huang/",
+};
+
 // CV/Resume Files (PDFs must live in public/; compile zhengzheng_phd_resume.tex → zhengzheng_phd_resume.pdf)
 export const resumeFiles = {
   englishCV: "/zhengzheng_phd_resume.pdf",
@@ -77,7 +83,8 @@ export const education = [
     degree: "Ph.D. in Computer Science",
     institution: "University of Texas at Arlington",
     period: "Aug. 2024 - Present",
-    advisor: "Prof. Junzhou Huang",
+    advisor: advisor.name,
+    advisorUrl: advisor.url,
     status: "Ph.D. Student",
   },
   {

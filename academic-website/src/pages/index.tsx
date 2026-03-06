@@ -3,6 +3,7 @@ import Layout from "../components/Layout";
 import {
   personalInfo,
   aboutMe,
+  advisor,
   researchInterests,
   newsItems,
 } from "../data/siteConfig";
@@ -145,7 +146,30 @@ export default function Home() {
               </h2>
               {aboutMe.paragraphs.map((paragraph, index) => (
                 <p key={index} className="text-gray-600 mb-4">
-                  {paragraph}
+                  {index === 0
+                    ? (() => {
+                        const parts = paragraph.split(advisor.name);
+                        return (
+                          <>
+                            {parts.map((part, i) => (
+                              <span key={i}>
+                                {part}
+                                {i < parts.length - 1 && (
+                                  <a
+                                    href={advisor.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-blue-600 hover:underline"
+                                  >
+                                    {advisor.name}
+                                  </a>
+                                )}
+                              </span>
+                            ))}
+                          </>
+                        );
+                      })()
+                    : paragraph}
                 </p>
               ))}
             </div>
