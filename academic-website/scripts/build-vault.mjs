@@ -7,8 +7,8 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const SRC_DIR = path.join(ROOT, "vault-src");
-// Unguessable URL path; never list it in robots.txt or site navigation.
-const PUBLIC_NAME = "cchbfd9y7r9g";
+// Hidden URL path; never list it in robots.txt or site navigation.
+const PUBLIC_NAME = "atelier";
 // Stage dir carries PUBLIC_NAME because StatiCrypt keeps the input dir name: <stage>/<name> -> public/<name>.
 const STAGE_ROOT = path.join(ROOT, ".vault-build");
 const STAGE_DIR = path.join(STAGE_ROOT, PUBLIC_NAME);
