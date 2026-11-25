@@ -1,4 +1,4 @@
-// Encrypts every single-file page in vault-src/ (plaintext, gitignored) into public/vault/
+// Encrypts every single-file page in vault-src/ (plaintext, gitignored) into public/<PUBLIC_NAME>/
 // with one shared password, plus an encrypted index page listing them.
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
@@ -7,10 +7,12 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const SRC_DIR = path.join(ROOT, "vault-src");
-// Stage dir is named "vault" because StatiCrypt keeps the input dir name: <stage>/vault -> public/vault.
+// Unguessable URL path; never list it in robots.txt or site navigation.
+const PUBLIC_NAME = "cchbfd9y7r9g";
+// Stage dir carries PUBLIC_NAME because StatiCrypt keeps the input dir name: <stage>/<name> -> public/<name>.
 const STAGE_ROOT = path.join(ROOT, ".vault-build");
-const STAGE_DIR = path.join(STAGE_ROOT, "vault");
-const OUT_DIR = path.join(ROOT, "public", "vault");
+const STAGE_DIR = path.join(STAGE_ROOT, PUBLIC_NAME);
+const OUT_DIR = path.join(ROOT, "public", PUBLIC_NAME);
 const PASSWORD_FILE = path.join(ROOT, ".vault-password");
 const IGNORED = new Set([".DS_Store"]);
 
@@ -124,7 +126,7 @@ function main() {
     if (!html.includes("<head>")) throw new Error(`No <head> in ${file}; StatiCrypt template changed?`);
     fs.writeFileSync(file, html.replace("<head>", '<head>\n<meta name="robots" content="noindex, nofollow">'));
   }
-  console.log(`Encrypted ${pages.length} page(s) + index into public/vault/`);
+  console.log(`Encrypted ${pages.length} page(s) + index into public/${PUBLIC_NAME}/`);
 }
 
 main();
