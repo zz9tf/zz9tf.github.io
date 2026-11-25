@@ -77,3 +77,7 @@ config.private.js
 *credentials*
 *private*
 *secret* 
+# Vault: plaintext sources and password stay local; only encrypted output in public/vault is committed
+academic-website/vault-src/
+academic-website/.vault-build/
+academic-website/.vault-password

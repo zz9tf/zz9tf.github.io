@@ -69,3 +69,13 @@ Main pages: Home (`/`), Research (`/research`), Publications (`/publications`), 
 
 - [Next.js Documentation](https://nextjs.org/docs)
 - [Tailwind CSS](https://tailwindcss.com/docs)
+
+## Vault (password-protected pages)
+
+Hidden pages served at `/vault/`, encrypted with [StatiCrypt](https://github.com/robinmoisson/staticrypt) under one shared password.
+
+1. Put each page as a single self-contained HTML file in `vault-src/<slug>.html` (gitignored; inline all images/CSS/JS, since only HTML gets encrypted).
+2. Save the password in `.vault-password` (gitignored) or export `VAULT_PASSWORD`.
+3. Run `npm run vault`, then commit `public/vault/` (ciphertext only).
+
+The salt in `.staticrypt.json` is shared so "Remember me" unlocks every vault page at once. To change the password, update it and rerun `npm run vault`.
